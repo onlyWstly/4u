@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  box-sizing: border-box;
+  background-color: #ffc0d9;
+}
+.container {
+  border: 1px solid crimson;
+  border-radius: 20px;
+  height: 150px;
+  width: 300px;
+  margin: auto;
+  background-color: #ff90bc;
+  margin-top: 150px;
+}
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.myTxt {
+  margin-bottom: 1rem;
+  color: #8acdd7;
+}
+.inPut {
+  border: none;
+  background-color: #f9f9e0;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  border-style: none;
+  outline: none;
+}
+
+.myBtn {
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: crimson;
+  color: white;
+}
+
+#image1 {
+  top: 20px;
+  position: absolute;
+  left: 30px;
+  border-radius: 100%;
+}
+
+#image2 {
+  left: 20px;
+  position: absolute;
+  border-radius: 100%;
+}
+#image3 {
+  right: 20px;
+  position: absolute;
+  border-radius: 100%;
+}
+
+#image4 {
+  bottom: 10px;
+  position: absolute;
+  right: 120px;
+  height: 120px;
+  width: 120px;
+  border-radius: 100%;
+}
+#image5 {
+  top: 20px;
+  right: 40px;
+  position: absolute;
+  border-radius: 100%;
+}
+img {
+  width: 130px;
+  height: 130px;
+}
+
+.meme {
+  visibility: hidden;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.picture {
+  animation: shake 0.5s ease-in-out infinite;
+}
