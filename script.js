@@ -1,16 +1,29 @@
+const jsConfetti = new JSConfetti();
+
 document.querySelector(".myBtn").addEventListener("click", function () {
-  changeTextPlayAudioAndShowElementWithDelay();
+  changeTextPlayAudioAndShowElementWithDelay()
+    .then(triggerConfetti)
+    .catch((error) => console.error(error));
 });
 
 function changeTextPlayAudioAndShowElementWithDelay() {
-  let username = document.querySelector(".inPut").value;
-  let myTxtElement = document.querySelector(".myTxt");
-  myTxtElement.innerHTML = `Cute mo ${username} <3`;
-  myTxtElement.style.color = "red";
-  myTxtElement.style.fontSize = "2.2rem"; // Change the color to red (you can specify any color here)
+  return new Promise((resolve, reject) => {
+    try {
+      let username = document.querySelector(".inPut").value;
+      let myTxtElement = document.querySelector(".myTxt");
+      myTxtElement.innerHTML = `Cute mo ${username} <3`;
+      myTxtElement.style.color = "red";
 
-  playAudio();
-  setTimeout(showHiddenElement, 1600); // Adjust the delay time in milliseconds (1600 milliseconds = 1.6 seconds)
+      playAudio();
+
+      setTimeout(() => {
+        showHiddenElement();
+        resolve(); // Resolve the promise after the delay
+      }, 1600); // Adjust the delay time in milliseconds (1600 milliseconds = 1.6 seconds)
+    } catch (error) {
+      reject(error); // Reject the promise if an error occurs
+    }
+  });
 }
 
 function playAudio() {
@@ -21,4 +34,15 @@ function playAudio() {
 function showHiddenElement() {
   let hiddenElement = document.querySelector(".meme");
   hiddenElement.style.visibility = "visible";
+}
+
+function triggerConfetti() {
+  return new Promise((resolve, reject) => {
+    try {
+      jsConfetti.addConfetti();
+      resolve(); 
+    } catch (error) {
+      reject(error);
+    }
+  });
 }
