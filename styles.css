@@ -4,90 +4,7 @@
 }
 body {
   box-sizing: border-box;
-  background-color: #ffc0d9;
-  overflow: hidden;
-}
-.container {
-  border: 1px solid crimson;
-  border-radius: 20px;
-  min-height: 180px;
-  width: 300px;
-  margin: auto;
   background-color: #ff90bc;
-  margin-top: 300px;
-}
-.form {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 10px;
-}
-
-.myTxt {
-  margin-bottom: 2rem;
-  color: #8acdd7;
-  text-align: center;
-}
-.inPut {
-  border: none;
-  background-color: #f9f9e0;
-  padding: 10px 20px;
-  border-radius: 10px;
-  margin-bottom: 1rem;
-  border-style: none;
-  outline: none;
-}
-
-.myBtn {
-  border: none;
-  padding: 5px 10px;
-  border-radius: 5px;
-  background-color: crimson;
-  color: white;
-  cursor: pointer;
-}
-
-#image1 {
-  top: 110px;
-  position: absolute;
-  left: 30px;
-  border-radius: 100%;
-}
-
-#image2 {
-  left: 20px;
-  position: absolute;
-  border-radius: 100%;
-}
-#image3 {
-  right: 20px;
-  position: absolute;
-  border-radius: 100%;
-}
-
-#image4 {
-  bottom: 90px;
-  position: absolute;
-  right: 60px;
-  width: 300px;
-  height: 200px;
-
-  border-radius: 100%;
-}
-#image5 {
-  top: 120px;
-  right: 40px;
-  position: absolute;
-  border-radius: 100%;
-}
-img {
-  width: 150px;
-  height: 150px;
-}
-
-.meme {
-  visibility: hidden;
 }
 
 @keyframes shake {
@@ -110,3 +27,120 @@ img {
 .picture {
   animation: shake 0.5s ease-in-out infinite;
 }
+.container {
+  
+  width: 100vw;
+  margin-top: 15px;
+  display: flex;
+  place-items: center;
+}
+.myTxt {
+  color: #8acdd7;
+  text-align: center;
+}
+.form {
+  width: 330px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #ffc0d9;
+  margin: auto;
+  border: 1px solid crimson;
+  border-radius: 20px;
+}
+.inPut {
+  width: 180px;
+  height: 30px;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  padding: 5px 10px;
+  background-color: #f0f9e0;
+  margin-bottom: 0px;
+}
+.myBtn {
+  border: none;
+  background-color: crimson;
+  padding: 10px 20px;
+  border-radius: 20px;
+  color: #8acdd7;
+}
+.meme {
+  visibility: hidden;
+  display: grid;
+  grid-template-columns: repeat(3, 125px);
+
+  gap: 1rem;
+}
+.picture {
+  margin: auto;
+}
+
+img {
+  width: 120px;
+  height: 120px;
+  border-radius: 20px;
+}
+#image1 {
+}
+@media (min-width: 350px) {
+  .container {
+    margin-right: 150px;
+    width: 100vw;
+  }
+}
+
+@media (min-width: 425px) {
+  .container {
+    margin-right: 90px;
+    width: 100vw;
+    
+  }
+  .meme {
+  
+  display: grid;
+  grid-template-columns: repeat(3, 133px);
+}
+@media (min-width: 440px) {
+  .container {
+    margin-right: 120px;
+  }
+  .meme {
+  visibility: hidden;
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
+}
+@media (min-width: 640px) {
+  .container {
+    margin-right: 120px;
+  }
+  .meme {
+  visibility: hidden;
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
+}
+
+@media (min-width: 768px) {
+  .container {
+    margin-right: 150px;
+  }
+  .meme {
+  visibility: hidden;
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
+}
+
+@media (min-width: 1024px) {
+  .container {
+    margin-right: 170px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    margin-right: 250px;
+  }
+}
+
